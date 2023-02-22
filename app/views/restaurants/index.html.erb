@@ -1,8 +1,13 @@
 <div class="container">
   <h1>My Restaurants</h1>
-  <ul>
     <% @restaurants.each do |restaurant| %>
-      <li><%= link_to restaurant.name, restaurant_path(restaurant), class: "text-decoration-none"  %></li>
+      <div class="d-flex justify-content-between w-100 m-3">
+        <h3>
+          <%= link_to restaurant.name, restaurant_path(restaurant), class: "text-decoration-none text-dark"  %>
+        </h3>
+          <small>
+            <%= link_to "See details", restaurant_path(restaurant), class: "btn btn-primary flex-end"%>
+          </small>
+      </div>
     <% end %>
-  </ul>
 </div>
